@@ -34,7 +34,7 @@ export const Header = () => {
                     <Text
                         fontSize='30px'
                         color='#454545'
-                        fontFamily='istok-web, sans-serif'
+                        fontFamily='Istok Web, sans-serif'
                         fontWeight='bold'
                         textAlign='center'
                     >
@@ -44,13 +44,12 @@ export const Header = () => {
 
                 <Box
                     width='100%'
-                    marginTop='20px'
+                    marginTop='10px'
                 >
                     <Text
                             fontSize='26px'
-                            color='#000000'
-                            fontFamily='istok-web, sans-serif'
-                            fontWeight='regular'
+                            color='#454545'
+                            fontFamily='Istok Web, sans-serif'
                             textAlign='center'
                         >
                             Faça o login

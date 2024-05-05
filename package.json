@@ -6,6 +6,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@fontsource/inria-sans": "^5.0.13",
     "@fontsource/istok-web": "^5.0.20",
     "@fontsource/khand": "^5.0.13",
     "@testing-library/jest-dom": "^5.17.0",
