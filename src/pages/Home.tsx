@@ -1,9 +1,15 @@
-import { Center, Text } from "@chakra-ui/react"
+import { Box, Center, Text } from "@chakra-ui/react"
 
 export const Home = () => {
     return (
         <Center>
-            <Text>Página Home</Text>
+            <Box
+                height='100vh'
+                width='100vw'
+                backgroundColor='#FFFDEB'
+            >
+                Página Home
+            </Box>
         </Center>
     )
 }

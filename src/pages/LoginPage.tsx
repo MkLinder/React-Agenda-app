@@ -1,19 +1,7 @@
 import { Box, Center, Text} from "@chakra-ui/react"
 import { LoginBox } from "../components/Login"
-import { useContext, useState } from "react"
-import { AppContext } from "../components/AppContext"
-import { useNavigate } from "react-router-dom"
-import { Login } from "../services/Login"
 
 export const LoginPage = () => {
-    const [ email, setEmail ] = useState<string>('')
-    const { setIsLoggedIn } = useContext(AppContext)
-    const navigate = useNavigate()
-
-    const validateUser = async (email: string) => {
-        const loggedIn = await Login(email)
-    }
-
     return (
         <>
             <Box

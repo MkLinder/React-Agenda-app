@@ -8,13 +8,32 @@ import {
     Text
 } from '@chakra-ui/react'
 import '@fontsource/istok-web'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Login } from '../services/Login'
+import { AppContext } from './AppContext'
+import { useNavigate } from 'react-router-dom'
 
 export const LoginBox = () => {
 
-    const [email, setEmail] = useState('')
+    const [ email, setEmail ] = useState<string>('')
     const [pass, setPass] = useState('')
+    const { setIsLoggedIn } = useContext(AppContext)
+    const navigate = useNavigate()
+    
+
+
+    const validateUser = async (email: string,password:string) => {
+        const loggedIn = await Login(email, password)
+
+        if (!loggedIn){
+            return alert('Email ou senha inválido!')
+        }
+        
+        setIsLoggedIn(true)
+        navigate(`/home/1`)
+    }
+
+    
     return (
         <Center>
             <Box
@@ -74,7 +93,7 @@ export const LoginBox = () => {
                             boxShadow: '0 0 5px rgba(115, 87, 153, 1)',
                             transition: '.5s'
                         }}
-                        onClick={() => Login(email)}
+                        onClick={() => validateUser(email, pass)}
                     >
                         ENTRAR
                     </Button>

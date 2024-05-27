@@ -1,9 +1,20 @@
 import { Box, Flex, Text } from "@chakra-ui/react"
 import '@fontsource/khand'
 import '@fontsource/istok-web'
+import { useContext } from "react"
+import { AppContext } from "./AppContext"
+import { useNavigate } from "react-router-dom"
 
 
 export const Header = () => {
+    const { isLoggedIn, setIsLoggedIn } = useContext(AppContext) 
+    const navigate = useNavigate()
+
+    const logout = () => {
+        setIsLoggedIn(false)
+        navigate('/')
+    }
+
     return (
         <Box
             minWidth='100vw'
