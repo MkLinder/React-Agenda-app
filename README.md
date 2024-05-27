@@ -1,6 +1,6 @@
 # Agenda.me
 
-This is an application for users who need an agenda and registration of patients/clients.
+Este projeto foi idealizado através da necessidade de uma pessoa autônoma da área da saúde, de ter o controle de cadastro e agendamento de pacientes. O projeto iniciou-se para cumprir uma Atividade de Extesão do curso Superior em Tecnologia de Análise e Desenvolvimento de Sistemas.
 
 
 ## Login page
