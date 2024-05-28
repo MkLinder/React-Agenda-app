@@ -1,13 +1,14 @@
-import { Box, Flex, Text } from "@chakra-ui/react"
+import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react"
 import '@fontsource/khand'
 import '@fontsource/istok-web'
 import { useContext } from "react"
-import { AppContext } from "./AppContext"
+import { AppContext, UserContext, UserContextProvider } from "./AppContext"
 import { useNavigate } from "react-router-dom"
+import { Content } from "./HomeHeaderContent"
 
 
 export const Header = () => {
-    const { isLoggedIn, setIsLoggedIn } = useContext(AppContext) 
+    const { isLoggedIn, setIsLoggedIn } = useContext(AppContext)
     const navigate = useNavigate()
 
     const logout = () => {
@@ -16,28 +17,33 @@ export const Header = () => {
     }
 
     return (
-        <Box
-            minWidth='100vw'
+        <Flex
+            minWidth='100%'
+            padding='20px'
             backgroundColor='transparent'
+            justifyContent='end'
         >
-            <Flex
-                flexDirection='column'
-            >
-                <Box
-                    width='100%'
-                    padding='20px 60px 0 0'
-                >
-                    <Text 
-                        fontSize='50px'
-                        color='#A296B3'
-                        fontFamily='khand, sans-serif'
-                        fontWeight='700'
-                        textAlign='right'
-                    >
-                        Agenda.me
-                    </Text>
+            { isLoggedIn && (
+                <Box width='60%'>
+                    <Content/>
                 </Box>
-            </Flex>
-        </Box>
+            ) }
+            <Box width='40%'>
+                <Flex
+                    flexDirection='column'
+                >
+                        <Text 
+                            fontSize='50px'
+                            color='#A296B3'
+                            fontFamily='khand, sans-serif'
+                            fontWeight='700'
+                            textAlign='right'
+                            alignItems='center'
+                        >
+                            Agenda.me
+                        </Text>
+                </Flex>
+            </Box>
+        </Flex>
     )
 }

@@ -1,8 +1,11 @@
 import { Box } from "@chakra-ui/react"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
+import { Content } from "./HomeHeaderContent"
 
 export const Layout = ( { children }: any) => {
+    const content = Content
+
     return (
         <Box
             minHeight='100vh'
